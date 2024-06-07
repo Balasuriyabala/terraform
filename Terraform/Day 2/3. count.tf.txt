@@ -1,0 +1,25 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+    }
+  }
+}
+# Configure the AWS provider
+provider "aws" {
+  region = "ap-south-1"  # Change the region as needed
+}
+
+# Create ec2 instances
+resource "aws_instance" "example" {
+  ami           = "ami-0f58b397bc5c1f2e8"  # Change to a valid AMI ID for your region
+  instance_type = "t2.micro"
+  count         = 2
+
+  tags = {
+    #Name = "instance-one"
+     Name = "terraform-${count.index}"
+  }
+}
+

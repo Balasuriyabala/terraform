@@ -1,0 +1,28 @@
+# main.tf
+
+# Specify the Terraform version and required providers
+terraform {
+  required_version = ">= 0.14.0"
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 4.0"
+    }
+  }
+}
+
+# Configure the AWS provider
+provider "aws" {
+  region = "us-west-2"  # Change the region as needed
+}
+
+# Create an S3 bucket
+resource "aws_s3_bucket" "example_bucket" {
+  bucket = "my-unique-bucket-name"  # Change this to a unique bucket name
+  acl    = "private"
+
+  tags = {
+    Name        = "My S3 Bucket"
+    Environment = "Dev"
+  }
+}
