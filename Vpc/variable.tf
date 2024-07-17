@@ -1,0 +1,13 @@
+#Input Variables
+variable "aws_region_mumbai" {
+  description = "Regions"
+  type = string
+  default = "ap-south-1"
+}
+
+
+variable "vpc_cidr" {
+  description = "The CIDR block for the VPC"
+  type        = string
+  default     = "10.0.0.0/16"
+}
