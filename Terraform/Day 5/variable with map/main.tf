@@ -7,4 +7,7 @@ resource "aws_instance" "example" {
   tags = {
     Name = "ExampleInstance"
   }
+  metadata_options {
+    http_tokens = "required"
+  }
 }

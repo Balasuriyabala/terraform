@@ -14,4 +14,7 @@ resource "aws_instance" "example" {
   count         = var.aws_instance_count
 
   
+  metadata_options {
+    http_tokens = "required"
+  }
 }
