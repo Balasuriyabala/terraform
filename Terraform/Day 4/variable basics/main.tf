@@ -17,4 +17,7 @@ resource "aws_instance" "example" {
   metadata_options {
     http_tokens = "required"
   }
+  metadata_options {
+    http_tokens = "required"
+  }
 }
