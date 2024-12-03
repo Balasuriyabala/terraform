@@ -6,6 +6,8 @@ resource "aws_vpc" "main" {
   cidr_block = var.vpc_cidr
 
   tags = {
-    Name = "example-vpc"
+    Name    = "example-vpc"
+    Team    = ""
+    git_org = "Balasuriyabala"
   }
 }
