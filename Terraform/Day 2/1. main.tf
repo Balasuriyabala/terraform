@@ -13,15 +13,23 @@ provider "aws" {
 #Configure the provider 2
 provider "aws" {
   region = "us-east-1"
-  alias = "hi"
+  alias  = "hi"
 }
 #Resoure Block which is noting our aws services
 # Create a VPC
 resource "aws_vpc" "first" {
   cidr_block = "10.0.0.0/16"
+  tags = {
+    Team    = ""
+    git_org = "Balasuriyabala"
+  }
 }
 # Create a VPC
 resource "aws_vpc" "second" {
   cidr_block = "10.0.0.0/16"
-  provider = aws.hi
+  provider   = aws.hi
+  tags = {
+    Team    = ""
+    git_org = "Balasuriyabala"
+  }
 }
