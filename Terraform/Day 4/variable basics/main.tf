@@ -13,8 +13,11 @@ resource "aws_instance" "example" {
   instance_type = "t2.micro"
   count         = var.aws_instance_count
 
-  
+
   metadata_options {
     http_tokens = "required"
+  }
+  tags = {
+    Team = "production"
   }
 }
