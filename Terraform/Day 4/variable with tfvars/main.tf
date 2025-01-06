@@ -5,5 +5,8 @@ provider "aws" {
 resource "aws_instance" "example" {
   ami           = var.ec2_ami_id
   instance_type = "t2.micro"
-  count         = var.aws_instance_count  
+  count         = var.aws_instance_count
+  tags = {
+    Team = "production"
+  }
 }

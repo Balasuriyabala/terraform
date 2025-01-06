@@ -7,5 +7,6 @@ resource "aws_vpc" "main" {
 
   tags = {
     Name = "example-vpc"
+    Team = "production"
   }
 }
